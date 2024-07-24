@@ -5,5 +5,14 @@
     "LocaleSwitcher": {
         "locale": "{locale, select, es {Español} en {Inglés} other {Desconocido}}",
         "switch-language": "in english"
+    },
+    "DarkModeSwitcher": {
+        "go-dark": "oscurecer",
+        "go-light": "iluminar"
+    },
+    "Navbar": {
+        "home": "sobre mí",
+        "blog": "blog",
+        "deploy": "deploy"
     }
 }

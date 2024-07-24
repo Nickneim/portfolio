@@ -2,7 +2,7 @@ import '@/app/globals.css'
 import type { Metadata } from 'next'
 import { GeistSans } from 'geist/font/sans'
 import { GeistMono } from 'geist/font/mono'
-import { Navbar } from '@/app/components/nav'
+import { Navbar } from '@/app/components/Navbar'
 import Footer from '@/app/components/footer'
 import { baseUrl } from '@/app/sitemap'
 import Script from 'next/script'
@@ -82,7 +82,7 @@ export default async function LocaleLayout({
       <body className="antialiased max-w-xl mx-4 mt-8 lg:mx-auto">
         <main className="min-h-screen flex-auto min-w-0 mt-6 flex flex-col px-2 md:px-0">
           <Providers locale={locale} messages={messages}>
-            <Navbar />
+            <Navbar params={{locale}}/>
             {children}
             <Footer />
           </Providers>
