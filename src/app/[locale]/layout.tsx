@@ -10,6 +10,7 @@ import { Providers } from '@/app/providers'
 import React from 'react'
 import { notFound } from 'next/navigation'
 import { getMessages, unstable_setRequestLocale } from 'next-intl/server'
+import { locales } from '@/config'
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
@@ -39,8 +40,6 @@ export const metadata: Metadata = {
   },
 }
 
-const locales = ['es', 'en'] as const;
-
 //function to generate the routes for all the locales
 export async function generateStaticParams() {
   return locales.map((locale) => ({ locale }))
@@ -66,6 +65,7 @@ export default async function LocaleLayout({
   children: React.ReactNode;
   params: {locale: string};
 }) {
+  // required since we're using static export
   unstable_setRequestLocale(locale)
 
   const messages = await getMessages();

@@ -1,7 +1,6 @@
 import { BlogPosts } from '@/app/components/posts'
+import { locales } from '@/config';
 
-
-const locales = ['es', 'en'] as const;
 
 export async function generateStaticParams() {
   return locales.map((locale) => ({ locale }))
