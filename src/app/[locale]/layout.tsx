@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 import { GeistSans } from 'geist/font/sans'
 import { GeistMono } from 'geist/font/mono'
 import { Navbar } from '@/app/components/Navbar'
-import Footer from '@/app/components/footer'
+import Footer from '@/app/components/Footer'
 import { baseUrl } from '@/app/sitemap'
 import Script from 'next/script'
 import { Providers } from '@/app/providers'
@@ -74,6 +74,7 @@ export default async function LocaleLayout({
     <html
       lang={locale}
       className={cx(
+        "transition-colors duration-500",
         GeistSans.variable,
         GeistMono.variable
       )}

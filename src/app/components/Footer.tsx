@@ -1,19 +1,5 @@
-function ArrowIcon() {
-  return (
-    <svg
-      width="12"
-      height="12"
-      viewBox="0 0 12 12"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        d="M2.07102 11.3494L0.963068 10.2415L9.2017 1.98864H2.83807L2.85227 0.454545H11.8438V9.46023H10.2955L10.3097 3.09659L2.07102 11.3494Z"
-        fill="currentColor"
-      />
-    </svg>
-  )
-}
+import { GITHUB_PAGE, LINKEDIN_PAGE, SOURCECODE_PAGE } from "@/config"
+import { FaCode, FaGithub, FaLinkedin } from "react-icons/fa6"
 
 export default function Footer() {
   return (
@@ -24,10 +10,10 @@ export default function Footer() {
             className="flex items-center hover:text-neutral-800 dark:hover:text-neutral-100"
             rel="noopener noreferrer"
             target="_blank"
-            href="/rss"
+            href={GITHUB_PAGE}
           >
-            <ArrowIcon />
-            <p className="ml-2 h-7">rss</p>
+            <FaGithub />
+            <p className="ml-2 h-7">GitHub</p>
           </a>
         </li>
         <li>
@@ -35,10 +21,10 @@ export default function Footer() {
             className="flex items-center hover:text-neutral-800 dark:hover:text-neutral-100"
             rel="noopener noreferrer"
             target="_blank"
-            href="https://github.com/vercel/next.js"
+            href={LINKEDIN_PAGE}
           >
-            <ArrowIcon />
-            <p className="ml-2 h-7">github</p>
+            <FaLinkedin />
+            <p className="ml-2 h-7">LinkedIn</p>
           </a>
         </li>
         <li>
@@ -46,10 +32,10 @@ export default function Footer() {
             className="flex items-center hover:text-neutral-800 dark:hover:text-neutral-100"
             rel="noopener noreferrer"
             target="_blank"
-            href="https://vercel.com/templates/next.js/portfolio-starter-kit"
+            href={SOURCECODE_PAGE}
           >
-            <ArrowIcon />
-            <p className="ml-2 h-7">view source</p>
+            <FaCode />
+            <p className="ml-2 h-7">source code</p>
           </a>
         </li>
       </ul>
