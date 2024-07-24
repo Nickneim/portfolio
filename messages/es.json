@@ -1,0 +1,8 @@
+{
+    "HomePage": {
+        "title": "¡Hola mundo!"
+    },
+    "LocaleSwitcher": {
+        "locale": "{locale, select, es {Español} en {Inglés} other {Desconocido}}"
+    }
+}
