@@ -1,6 +1,7 @@
 {
     "HomePage": {
-        "title": "¡Hola mundo!"
+        "title": "Nicolás Montes",
+        "about": "Hola, soy Nico. Soy un desarrollador de software y Gamedev. Soy un Licenciado en Ciencias de la Computación de la Universidad Nacional de Córdoba. He hecho bots, juegos, y páginas web y estoy buscando un lugar en donde trabajar y aprender. ¡Hablemos!"
     },
     "LocaleSwitcher": {
         "locale": "{locale, select, es {Español} en {Inglés} other {Desconocido}}",
