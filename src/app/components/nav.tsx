@@ -1,7 +1,6 @@
-"use client";
-import Link from 'next/link'
-import { useEffect, useState } from 'react';
-import { useTheme } from 'next-themes';
+import { Link } from '@/navigation';
+import LocaleSwitcher from '@/app/components/LocaleSwitcher';
+import DarkModeSwitcher from '@/app/components/DarkModeSwitcher';
 
 const navItems = {
   '/': {
@@ -18,11 +17,6 @@ const navItems = {
 
 
 export function Navbar() {
-  const [mounted, setMounted] = useState(false)
-  const { setTheme, resolvedTheme } = useTheme()
-
-  useEffect(() =>  setMounted(true), [])
-
   return (
     <aside className="-ml-[8px] mb-16 tracking-tight">
       <div className="lg:sticky lg:top-20">
@@ -42,14 +36,8 @@ export function Navbar() {
                 </Link>
               )
             })}
-            { mounted &&
-            <button
-              className="hover:text-neutral-800 dark:hover:text-neutral-200 flex align-right relative py-1 px-2 m-1"
-              onClick={() => setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')}
-            >
-              {resolvedTheme === 'dark' ? "go light" : "go dark"}
-            </button>
-            }
+            <LocaleSwitcher className="hover:text-neutral-800 dark:hover:text-neutral-200 flex align-right relative py-1 px-2 m-1"/>
+            <DarkModeSwitcher className="hover:text-neutral-800 dark:hover:text-neutral-200 flex align-right relative py-1 px-2 m-1" />
           </div>
         </nav>
       </div>

@@ -1,7 +1,13 @@
-import Link from 'next/link'
+import { Link } from '@/navigation'
 import { formatDate, getBlogPosts } from '@/app/[locale]/blog/utils'
+import { unstable_setRequestLocale } from 'next-intl/server'
 
-export function BlogPosts() {
+export function BlogPosts({
+  params: {locale}
+} : {
+  params: {locale: string};
+}) {
+  unstable_setRequestLocale(locale)
   let allBlogs = getBlogPosts()
 
   return (

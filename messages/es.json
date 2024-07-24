@@ -3,6 +3,7 @@
         "title": "¡Hola mundo!"
     },
     "LocaleSwitcher": {
-        "locale": "{locale, select, es {Español} en {Inglés} other {Desconocido}}"
+        "locale": "{locale, select, es {Español} en {Inglés} other {Desconocido}}",
+        "switch-language": "in english"
     }
 }
