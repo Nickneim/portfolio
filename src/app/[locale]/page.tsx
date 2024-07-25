@@ -1,4 +1,3 @@
-import { BlogPosts } from '@/app/components/posts'
 import { unstable_setRequestLocale } from 'next-intl/server';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/navigation';
