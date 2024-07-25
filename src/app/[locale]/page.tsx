@@ -11,7 +11,7 @@ export default function Page({
   const t = useTranslations("HomePage")
 
   return (
-    <section>
+    <section className="max-w-xl">
       <h1 className="mb-8 text-4xl font-semibold tracking-tighter">
         {t('title')}
       </h1>

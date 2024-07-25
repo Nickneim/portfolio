@@ -3,6 +3,13 @@
         "title": "Nicolás Montes",
         "about": "Hi, I'm Nico. I'm a Software Engineer and Game Developer. I'm a Licenciate in Computer Science from the National University of Córdoba. I've made bots, games, and websites and I'm looking for a place to work and learn. Let's connect!"
     },
+    "Projects": {
+        "title": "My Projects",
+        "about": "These are some of my projects:"
+    },
+    "Contact": {
+        "title": "Contact"
+    },
     "LocaleSwitcher": {
         "locale": "{locale, select, es {Spanish} en {English} other {Unknown}}",
         "switch-language": "en español"
@@ -13,6 +20,8 @@
     },
     "Navbar": {
         "home": "about",
+        "projects": "projects",
+        "contact": "contact",
         "blog": "blog",
         "deploy": "deploy"
     }
