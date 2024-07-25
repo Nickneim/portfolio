@@ -8,7 +8,10 @@
         "about": "Estos son algunos de mis projectos:"
     },
     "Contact": {
-        "title": "Contacto"
+        "title": "Contacto",
+        "cv-spanish": "Descargar CV",
+        "cv-english": "Descargar CV (en inglés)",
+        "copy-email": "copiar a portapapeles"
     },
     "LocaleSwitcher": {
         "locale": "{locale, select, es {Español} en {Inglés} other {Desconocido}}",
