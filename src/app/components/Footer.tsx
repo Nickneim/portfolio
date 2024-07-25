@@ -21,8 +21,8 @@ const links = [
 
 export default function Footer() {
   return (
-    <footer className="mb-16 sticky">
-      <ul className="font-sm mt-8 flex flex-col space-x-0 space-y-2 text-neutral-600 md:flex-row md:space-x-4 md:space-y-0 dark:text-neutral-300">
+    <footer className="mb-16 sticky border border-transparent border-t-slate-500 mt-10">
+      <ul className="font-sm mt-8 flex flex-row space-x-4 space-y-0 text-neutral-600 sm:flex-row sm:space-x-4 sm:space-y-0 dark:text-neutral-300">
         {links.map(({name, icon, href}) => (
           <li key={name}>
             <a

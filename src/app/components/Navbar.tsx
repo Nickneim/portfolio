@@ -38,14 +38,14 @@ export function Navbar({
                 <Link
                   key={path}
                   href={path}
-                  className="hover:text-neutral-800 dark:hover:text-neutral-200 flex align-middle relative py-1 px-2 m-1"
+                  className="hover:text-neutral-800 hover:underline underline-offset-[3px] dark:hover:text-neutral-200 flex align-middle relative py-1 px-2 m-1"
                 >
                   {t(name)}
                 </Link>
               )
             })}
-            <LocaleSwitcher className="hover:text-neutral-800 dark:hover:text-neutral-200 flex align-right relative py-1 px-2 m-1"/>
-            <DarkModeSwitcher className="hover:text-neutral-800 dark:hover:text-neutral-200 flex align-right relative py-1 px-2 m-1" />
+            <LocaleSwitcher className="hover:text-neutral-800 hover:underline underline-offset-[3px] dark:hover:text-neutral-200 flex align-right relative py-1 px-2 m-1"/>
+            <DarkModeSwitcher className="hover:text-neutral-800 hover:underline underline-offset-[3px] dark:hover:text-neutral-200 flex align-right relative py-1 px-2 m-1" />
           </div>
         </nav>
       </div>
