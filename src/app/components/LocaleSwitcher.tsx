@@ -1,8 +1,7 @@
 'use client'
 import { useLocale, useTranslations } from 'next-intl';
-// import { createSharedPathnamesNavigation } from 'next-intl/navigation';
 import { useRouter, usePathname } from '@/navigation';
-import { locales } from '@/config';
+import { MdLanguage } from 'react-icons/md';
 
 
 export default function LocaleSwitcher({
@@ -17,32 +16,18 @@ export default function LocaleSwitcher({
 
     const newLocale = locale === 'es' ? 'en' : 'es';
 
-    // const onLocaleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    //     const newLocale = e.target.value;
-    //     if (newLocale == 'es' || newLocale == 'en') {
-    //       router.replace(pathname, { locale: newLocale });
-    //     }
-    // }
-
     return (
+      
       <button
-        className={className}
+        className={`flex flex-row ${className}`}
         onClick={() => router.replace(pathname, { locale: newLocale})}
       >
-        {t('switch-language')}
+        <p className="flex font-semibold items-center sm:hidden">
+          <MdLanguage aria-label={('switch-language')} />
+          {locale}
+        </p>
+        <p className="hidden sm:flex">{t('switch-language')}</p>
       </button>
     )
 
-    // return (
-    //     <select
-    //         defaultValue={locale}
-    //         onChange={onLocaleChange}
-    //     >
-    //         {locales.map((lang) => (
-    //             <option key={lang} value={lang}>
-    //                 {t('locale', { locale: lang })}
-    //             </option>
-    //         ))}
-    //     </select>
-    // )
 }
