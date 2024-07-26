@@ -6,7 +6,8 @@
     },
     "Projects": {
         "title": "Mis Proyectos",
-        "about": "Estos son algunos de mis projectos:"
+        "about": "Estos son algunos de mis projectos:",
+        "wip": "Trabajo En Proceso"
     },
     "Contact": {
         "title": "Contacto",

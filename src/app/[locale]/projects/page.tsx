@@ -26,6 +26,7 @@ export default function Page({
     <section className="max-w-xl">
       <h1 className="font-semibold text-4xl mb-8 tracking-tighter">{t('title')}</h1>
       <h2 className="text-xl mb-8">{t('about')}</h2>
+      <h1 className="text-2xl">{t('wip')}</h1>
     </section>
   )
 }
