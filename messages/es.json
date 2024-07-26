@@ -28,5 +28,14 @@
         "contact": "contacto",
         "blog": "blog",
         "deploy": "deploy"
+    },
+    "Metadata": {
+        "title": "Nicolás Montes | Software Developer",
+        "template": "%s | Nicolás Montes",
+        "description": "Portfolio de Nicolás Montes",
+        "siteName": "Nicolás Montes | Software Developer",
+        "locale": "es_AR",
+        "contact": "Contacto",
+        "projects": "Proyectos"
     }
 }

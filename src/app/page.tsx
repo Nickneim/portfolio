@@ -1,6 +1,7 @@
-import { redirect } from "next/navigation";
+import { defaultLocale } from "@/config";
+import { permanentRedirect } from "next/navigation";
 
 
 export default function RootPage() {
-  redirect('/es');
+  permanentRedirect(`/${defaultLocale}`);
 }

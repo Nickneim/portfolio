@@ -1,7 +1,7 @@
 import CopyButton from '@/app/components/CopyButton';
 import { GITHUB_PAGE, ITCHIO_PAGE, LINKEDIN_PAGE, locales } from '@/config';
 import { useTranslations } from 'next-intl';
-import { unstable_setRequestLocale } from 'next-intl/server';
+import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 import { IconContext } from 'react-icons';
 import { FaCopy, FaGithub, FaGoogle, FaItchIo, FaLinkedin } from 'react-icons/fa6';
 import { MdWork } from 'react-icons/md';
@@ -28,6 +28,15 @@ const links = [
     href: ITCHIO_PAGE
   }
 ]
+
+ 
+export async function generateMetadata({params: {locale}}) {
+  const t = await getTranslations({locale, namespace: 'Metadata'});
+ 
+  return {
+    title: t('contact')
+  };
+}
 
 const GMAIL_ACCOUNT = "nicolas.montes@gmail.com"
 
