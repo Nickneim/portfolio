@@ -1,11 +1,9 @@
 import CopyButton from '@/app/components/CopyButton';
+import { basePath } from '@/app/sitemap';
 import { GITHUB_PAGE, ITCHIO_PAGE, LINKEDIN_PAGE, locales } from '@/config';
 import { useTranslations } from 'next-intl';
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
-import { IconContext } from 'react-icons';
-import { FaCopy, FaGithub, FaGoogle, FaItchIo, FaLinkedin } from 'react-icons/fa6';
-import { MdWork } from 'react-icons/md';
-import { SiGmail } from 'react-icons/si';
+import { FaGithub, FaItchIo, FaLinkedin } from 'react-icons/fa6';
 
 export async function generateStaticParams() {
   return locales.map((locale) => ({ locale }))
@@ -85,9 +83,8 @@ export default function Page({
             className="flex justify-center items-center text-2xl px-4 py-2 bg-neutral-300 hover:bg-neutral-200 dark:bg-neutral-700 dark:hover:bg-neutral-800 rounded-full border-2 border-neutral-500"
             rel="noopener noreferrer"
             target="_blank"
-            href={`/cv/${locale}/Montes Nicolás - CV.pdf`}
+            href={`${basePath}/cv/${locale}/Montes Nicolás - CV.pdf`}
           >
-            {/* <MdWork /> */}
             {locale === 'en' ? 
               t('cv-english') : t('cv-spanish') }
           </a>
@@ -97,9 +94,8 @@ export default function Page({
             className="flex justify-center items-center text-2xl px-4 py-2 bg-neutral-300 hover:bg-neutral-200 dark:bg-neutral-700 dark:hover:bg-neutral-800 rounded-full border-2 border-neutral-500"
             rel="noopener noreferrer"
             target="_blank"
-            href={`/cv/${otherLocale}/Montes Nicolás - CV.pdf`}
+            href={`${basePath}/cv/${otherLocale}/Montes Nicolás - CV.pdf`}
           >
-            {/* <MdWork /> */}
             {locale === 'en' ? 
               t('cv-spanish') : t('cv-english') }
           </a>

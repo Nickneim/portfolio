@@ -3,7 +3,8 @@ import {MetadataRoute} from 'next';
 
 // Adapt this as necessary
 const pathnames = ['/', '/projects', '/contact'];
-export const baseUrl = 'https://nickneim.github.io';
+export const basePath = process.env.NODE_ENV === 'development' ? '' : '/portfolio';
+export const baseUrl = `https://nickneim.github.io${basePath}`;
  
 export default function sitemap(): MetadataRoute.Sitemap {
   function getUrl(pathname: string, locale: string) {
