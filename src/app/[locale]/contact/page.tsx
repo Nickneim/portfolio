@@ -55,7 +55,7 @@ export default function Page({
   return (
     <section>
       <h1 className="font-semibold text-4xl mb-8 tracking-tighter">
-        {t('title')}:
+        {t('title')}
       </h1>
       <ul className="space-y-4">
         {links.map(({name, icon, href}) => (
@@ -75,10 +75,9 @@ export default function Page({
           <div
             className="flex justify-center items-center text-xl"
           >
-            E-mail: {' '}
+            <p className="hidden sm:flex mr-2">E-mail:</p>
             {GMAIL_ACCOUNT}
-            {' '}
-            <CopyButton text={GMAIL_ACCOUNT} tooltip={t('copy-email')} />
+            <CopyButton text={GMAIL_ACCOUNT} tooltip={t('copied')} />
           </div>
         </li>
         <li>

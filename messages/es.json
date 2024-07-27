@@ -13,7 +13,8 @@
         "title": "Contacto",
         "cv-spanish": "Descargar CV",
         "cv-english": "Descargar CV (en inglés)",
-        "copy-email": "copiar a portapapeles"
+        "copy-email": "copiar a portapapeles",
+        "copied": "¡Copiado!"
     },
     "LocaleSwitcher": {
         "locale": "{locale, select, es {Español} en {Inglés} other {Desconocido}}",
