@@ -36,9 +36,6 @@ export async function generateMetadata({params: {locale}}) {
   };
 }
 
-const GMAIL_ACCOUNT = "nicolas.montes@gmail.com"
-
-
 export default function Page({
   params: {locale}
 } : {
@@ -69,7 +66,7 @@ export default function Page({
             </a>
           </li>
         ))}
-        <li>
+        {/* <li>
           <div
             className="flex justify-center items-center text-xl"
           >
@@ -77,7 +74,7 @@ export default function Page({
             {GMAIL_ACCOUNT}
             <CopyButton text={GMAIL_ACCOUNT} tooltip={t('copied')} />
           </div>
-        </li>
+        </li> */}
         <li>
           <a
             className="flex justify-center items-center text-2xl px-4 py-2 bg-neutral-300 hover:bg-neutral-200 dark:bg-neutral-700 dark:hover:bg-neutral-800 rounded-full border-2 border-neutral-500"
