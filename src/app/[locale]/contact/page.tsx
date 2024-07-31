@@ -1,4 +1,4 @@
-import CopyButton from '@/app/components/CopyButton';
+import ContactForm from '@/app/components/ContactForm';
 import { basePath } from '@/app/sitemap';
 import { GITHUB_PAGE, ITCHIO_PAGE, LINKEDIN_PAGE, locales } from '@/config';
 import { useTranslations } from 'next-intl';
@@ -36,6 +36,7 @@ export async function generateMetadata({params: {locale}}) {
   };
 }
 
+
 export default function Page({
   params: {locale}
 } : {
@@ -66,15 +67,6 @@ export default function Page({
             </a>
           </li>
         ))}
-        {/* <li>
-          <div
-            className="flex justify-center items-center text-xl"
-          >
-            <p className="hidden sm:flex mr-2">E-mail:</p>
-            {GMAIL_ACCOUNT}
-            <CopyButton text={GMAIL_ACCOUNT} tooltip={t('copied')} />
-          </div>
-        </li> */}
         <li>
           <a
             className="flex justify-center items-center text-2xl px-4 py-2 bg-neutral-300 hover:bg-neutral-200 dark:bg-neutral-700 dark:hover:bg-neutral-800 rounded-full border-2 border-neutral-500"
@@ -98,6 +90,10 @@ export default function Page({
           </a>
         </li>
       </ul>
+      <h2 className='mt-10 mb-4 text-2xl font-semibold'>
+        {t('contact-me')}
+      </h2>
+      <ContactForm />
     </section>
   )
 }

@@ -13,8 +13,7 @@
         "title": "Contact",
         "cv-spanish": "Download CV (in Spanish)",
         "cv-english": "Download CV",
-        "copy-email": "copy to clipboard",
-        "copied": "Copied!"
+        "contact-me": "Send me a message:"
     },
     "LocaleSwitcher": {
         "locale": "{locale, select, es {Spanish} en {English} other {Unknown}}",
@@ -39,5 +38,21 @@
         "locale": "en_US",
         "contact": "Contact",
         "projects": "Projects"
+    },
+    "ContactForm": {
+        "name": "Name",
+        "email": "E-mail",
+        "message": "Message",
+        "name-placeholder": "John",
+        "email-placeholder": "john@yourmail.com",
+        "message-placeholder": "Hi Nico, we've seen your porfolio and...",
+        "send": "Send message",
+        "sent": "Message sent",
+        "errors": {
+            "missing-name": "Missing your name",
+            "missing-email": "Invalid email",
+            "missing-message": "Missing your message",
+            "emailjs": "Something went wrong... Try again"
+        }
     }
 }

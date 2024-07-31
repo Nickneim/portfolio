@@ -13,8 +13,7 @@
         "title": "Contacto",
         "cv-spanish": "Descargar CV",
         "cv-english": "Descargar CV (en inglés)",
-        "copy-email": "copiar a portapapeles",
-        "copied": "¡Copiado!"
+        "contact-me": "Envíame un mensaje:"
     },
     "LocaleSwitcher": {
         "locale": "{locale, select, es {Español} en {Inglés} other {Desconocido}}",
@@ -39,5 +38,21 @@
         "locale": "es_AR",
         "contact": "Contacto",
         "projects": "Proyectos"
+    },
+    "ContactForm": {
+        "name": "Nombre",
+        "email": "Correo electrónico",
+        "message": "Mensaje",
+        "name-placeholder": "Juan",
+        "email-placeholder": "juan@tumail.com",
+        "message-placeholder": "Hola Nico, vimos tu portfolio y...",
+        "send": "Enviar mensaje",
+        "sent": "Mensaje enviado",
+        "errors": {
+            "missing-name": "Escribe un nombre, por favor",
+            "missing-email": "Correo electrónico inválido",
+            "missing-message": "Escribe un mensaje, por favor",
+            "emailjs": "Algo salió mal... Inténtalo de nuevo"
+        }
     }
 }
