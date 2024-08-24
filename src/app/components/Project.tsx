@@ -1,6 +1,7 @@
 import { useTranslations } from 'next-intl';
 import { unstable_setRequestLocale } from 'next-intl/server'
 import React from 'react'
+import { basePath } from '@/app/sitemap';
 
 
 function websiteToRichTag(website: string) {
@@ -30,7 +31,7 @@ export function Project({
     <div className='mb-4'>
       <div
         className="h-52 rounded-t-xl"
-        style={{ background: `url(${t('image')})`, backgroundSize: "cover" }}
+        style={{ background: `url(${basePath}${t('image')})`, backgroundSize: "cover" }}
       >
       </div>
       <div className="rounded-b-xl py-6 px-4 bg-neutral-300 dark:bg-neutral-900">
