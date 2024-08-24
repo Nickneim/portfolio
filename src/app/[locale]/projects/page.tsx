@@ -1,3 +1,4 @@
+import { Project } from '@/app/components/Project';
 import { locales } from '@/config';
 import { useTranslations } from 'next-intl';
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
@@ -22,11 +23,17 @@ export default function Page({
   unstable_setRequestLocale(locale)
 
   const t = useTranslations("Projects")
+
+  const projects = ["games", "discord-bots", "thesis", "spamaps"]
   return (
     <section className="max-w-xl">
       <h1 className="font-semibold text-4xl mb-8 tracking-tighter">{t('title')}</h1>
       <h2 className="text-xl mb-8">{t('about')}</h2>
-      <h1 className="text-2xl">{t('wip')}</h1>
+      {/* <h1 className="text-2xl">{t('wip')}</h1> */}
+      {projects.map(
+        (project) =>
+          (<Project key={project} project={project} params={{locale}} />)
+      )}
     </section>
   )
 }

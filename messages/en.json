@@ -7,7 +7,27 @@
     "Projects": {
         "title": "My Projects",
         "about": "These are some of my projects:",
-        "wip": "Work In Progress"
+        "wip": "Work In Progress",
+        "games": {
+            "title": "PuzzleScript Games",
+            "about": "I've created various puzzle games using the <puzzlescript>PuzzleScript</puzzlescript> game engine. I've participated in game jams, I've been featured in <bontegames>bontegames</bontegames>, and I've been a part of <theodoor>collaborative projects</theodoor>. All my published games are in my <itchio>Itch.io website</itchio> and they're focused on the Puzzle genre.",
+            "image": "/images/games.png"
+        },
+        "thesis": {
+            "title": "Thesis Project",
+            "about": "For my degree in Computer Science, I worked on the optimization and parallelization of a program written in Fortran 77. For this, I used my knowledge in Parallel Computing and worked on updating inefficient code to modern standards.",
+            "image": "/images/plane.png"
+        },
+        "spamaps": {
+            "title": "Spamaps",
+            "about": "I was employed to create a website that enhanced Google Maps with music. A student project, the website used the Maps API and analyzed colors on the screen to detect which type of location was being seen (forest, city, ocean, etc.) and played appropiate music. Due to costs, the website is no longer running, but it was hosted on <spamaps>Github</spamaps> Pages.",
+            "image": "/images/spamaps.png"
+        },
+        "discord-bots": {
+            "title": "Discord Bots",
+            "about": "I've created a variety of Discord Bots for different purposes and servers. These include moderation utilities, image editing capabilities, as well as simulation of many boardgames and game shows.",
+            "image": "/images/discord-bots.png"
+        }
     },
     "Contact": {
         "title": "Contact",

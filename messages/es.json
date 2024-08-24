@@ -7,7 +7,27 @@
     "Projects": {
         "title": "Mis Proyectos",
         "about": "Estos son algunos de mis projectos:",
-        "wip": "Trabajo En Proceso"
+        "wip": "Trabajo En Proceso",
+        "games": {
+            "title": "Juegos en PuzzleScript",
+            "about": "Cree varios juegos usando el motor de videojuegos <puzzlescript>PuzzleScript</puzzlescript>. He participado en game jams, he aparecido en <bontegames>bontegames</bontegames>, y fui parte de un <theodoor>proyecto colaborativo</theodoor>. Todos los juegos que he publicado están en mi <itchio>sitio web de Itch.io</itchio> y se centran en el género Puzzle.",
+            "image": "/images/games.png"
+        },
+        "thesis": {
+            "title": "Trabajo Especial",
+            "about": "Para mi Licenciatura en Ciencias de la Computación, trabajé en la optimización y paralelización de un programa escrito en Fortran 77. Para esto, utilicé mi conocimiento de Computación Paralela y me esforcé en actualizar código ineficiente a un estándar moderno.",
+            "image": "/images/plane.png"
+        },
+        "spamaps": {
+            "title": "Spamaps",
+            "about": "Fui contratado para crear un sitio web que modifica Google Maps agregando música. Un proyecto estudiantil, el sitio web utilizaba la API de Maps y analizaba colores en la pantalla para determinar que tipo de ubicación se veía (bosque, ciudad, océano, etc.) y reproducía la música apropiada. Debido a costos de la API, el sitio web no esta habilitado pero fue hosteado en <spamaps>Github</spamaps> Pages.",
+            "image": "/images/spamaps.png"
+        },
+        "discord-bots": {
+            "title": "Bots de Discord",
+            "about": "Cree varios bots de Discord para distintos servidores y propósitos. Estos incluyen utilidades de moderación, capacidades de edición de imágenes, así como también simulación de juegos de mesa y programas de televisión como Jeopardy! o Countdown.",
+            "image": "/images/discord-bots.png"
+        }
     },
     "Contact": {
         "title": "Contacto",
