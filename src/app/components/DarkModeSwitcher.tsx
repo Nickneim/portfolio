@@ -11,7 +11,9 @@ export default function DarkModeSwitcher({className}: {className?: string}) {
   const { setTheme, resolvedTheme } = useTheme()
 
   const label = resolvedTheme === 'dark' ? t("go-light") : t("go-dark")
-
+  
+// next-themes requires waiting until client hydration completes
+// eslint-disable-next-line react-hooks/set-state-in-effect
   useEffect(() =>  setMounted(true), [])
   return (mounted &&
     <button
