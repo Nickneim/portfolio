@@ -1,12 +1,18 @@
 import { useTranslations } from 'next-intl';
-import { unstable_setRequestLocale } from 'next-intl/server'
 import React from 'react'
 import { basePath } from '@/app/sitemap';
 
+const websiteToRichTag = (website: string) => (chunks: React.ReactNode) => (  
+  <a
+    href={website}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="text-blue-800 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 font-semibold decoration-2 hover:underline focus:outline-none focus:underline"
+  >
+    {chunks}
+  </a>
+);
 
-function websiteToRichTag(website: string) {
-  return function tag(chunks) {return <a className="text-blue-800 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 font-semibold decoration-2 hover:underline focus:outline-none focus:underline" href={website}>{chunks}</a>};
-}
 const ABOUT_TAGS = {
   'puzzlescript': websiteToRichTag("https://www.puzzlescript.net/"),
   'bontegames': websiteToRichTag("https://www.bontegames.com/"),
@@ -16,15 +22,10 @@ const ABOUT_TAGS = {
 }
 
 export function Project({
-  project,
-  params: {locale}
+  project
 } : { 
-  project : string,
-  params: {
-    locale: string,
-  }
+  project : string
 }) {
-  unstable_setRequestLocale(locale)
 
   const t = useTranslations(`Projects.${project}`)
   return (

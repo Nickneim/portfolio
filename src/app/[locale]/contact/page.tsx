@@ -1,12 +1,13 @@
 import ContactForm from '@/app/components/ContactForm';
 import { basePath } from '@/app/sitemap';
-import { GITHUB_PAGE, ITCHIO_PAGE, LINKEDIN_PAGE, locales } from '@/config';
+import { GITHUB_PAGE, ITCHIO_PAGE, LINKEDIN_PAGE } from '@/config';
+import { routing } from '@/i18n/routing';
 import { useTranslations } from 'next-intl';
-import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { FaGithub, FaItchIo, FaLinkedin } from 'react-icons/fa6';
 
 export async function generateStaticParams() {
-  return locales.map((locale) => ({ locale }))
+  return routing.locales.map((locale) => ({ locale }))
 }
 
 const links = [
@@ -42,7 +43,7 @@ export default function Page({
 } : {
   params: {locale: string};
 }) {
-  unstable_setRequestLocale(locale)
+  setRequestLocale(locale)
 
   const t = useTranslations("Contact")
 

@@ -7,12 +7,15 @@ import Footer from '@/app/components/Footer'
 import { baseUrl } from '@/app/sitemap'
 import { Providers } from '@/app/providers'
 import React from 'react'
-import { getMessages, unstable_setRequestLocale } from 'next-intl/server'
-import { locales } from '@/config'
+import { getMessages, setRequestLocale, getTranslations } from 'next-intl/server'
+import { routing } from '@/i18n/routing';
 
-import {getTranslations} from 'next-intl/server';
  
-export async function generateMetadata({params: {locale}}) {
+export async function generateMetadata({
+  params: {locale}
+}: {
+  params: {locale: string};
+}): Promise<Metadata> {
   const t = await getTranslations({locale, namespace: 'Metadata'});
  
   return {
@@ -46,18 +49,8 @@ export async function generateMetadata({params: {locale}}) {
 
 //function to generate the routes for all the locales
 export async function generateStaticParams() {
-  return locales.map((locale) => ({ locale }))
+  return routing.locales.map((locale) => ({ locale }))
 }
-
-//function to get the translations
-// async function getMessages(locale: string) {
-//   try {
-//     return (await import(`@/../messages/${locale}.json`)).default
-//   } catch (error) {
-//     notFound()
-//   }
-// }
-
 
 const cx = (...classes : string[]) => classes.filter(Boolean).join(' ')
 
@@ -70,7 +63,7 @@ export default async function LocaleLayout({
   params: {locale: string};
 }) {
   // required since we're using static export
-  unstable_setRequestLocale(locale)
+  setRequestLocale(locale)
 
   const messages = await getMessages();
   
@@ -87,7 +80,7 @@ export default async function LocaleLayout({
       <body className="antialiased max-w-xl mx-auto mt-8 lg:mx-auto">
         <main className="min-h-screen flex-auto min-w-0 mt-6 flex flex-col px-6 sm:px-0">
           <Providers locale={locale} messages={messages}>
-            <Navbar params={{locale}}/>
+            <Navbar />
             {children}
             <Footer />
           </Providers>

@@ -1,10 +1,10 @@
 import { Project } from '@/app/components/Project';
-import { locales } from '@/config';
+import { routing } from '@/i18n/routing';
 import { useTranslations } from 'next-intl';
-import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
 
 export async function generateStaticParams() {
-  return locales.map((locale) => ({ locale }))
+  return routing.locales.map((locale) => ({ locale }))
 }
 
 export async function generateMetadata({params: {locale}}) {
@@ -20,7 +20,7 @@ export default function Page({
 } : {
   params: {locale: string};
 }) {
-  unstable_setRequestLocale(locale)
+  setRequestLocale(locale)
 
   const t = useTranslations("Projects")
 
@@ -31,7 +31,7 @@ export default function Page({
       <h2 className="text-xl mb-8">{t('about')}</h2>
       {projects.map(
         (project) =>
-          (<Project key={project} project={project} params={{locale}} />)
+          (<Project key={project} project={project} />)
       )}
     </section>
   )

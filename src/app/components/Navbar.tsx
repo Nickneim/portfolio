@@ -1,7 +1,6 @@
 import { Link } from '@/navigation';
 import LocaleSwitcher from '@/app/components/LocaleSwitcher';
 import DarkModeSwitcher from '@/app/components/DarkModeSwitcher';
-import { unstable_setRequestLocale } from 'next-intl/server';
 import { useTranslations } from 'next-intl';
 
 const navItems = {
@@ -18,12 +17,7 @@ const navItems = {
 
 
 
-export function Navbar({
-  params: {locale}
-} : {
-  params: {locale: string};
-}) {
-  unstable_setRequestLocale(locale)
+export function Navbar() {
   const t = useTranslations("Navbar")
   return (
     <aside className="-ml-[8px] mb-16 tracking-tight">

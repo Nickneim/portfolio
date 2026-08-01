@@ -1,4 +1,4 @@
-import { defaultLocale, locales } from '@/config';
+import {routing} from '@/i18n/routing';
 import {MetadataRoute} from 'next';
 
 // Adapt this as necessary
@@ -12,11 +12,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }
  
   return pathnames.map((pathname) => ({
-    url: getUrl(pathname, defaultLocale),
+    url: getUrl(pathname, routing.defaultLocale),
     lastModified: new Date(),
     alternates: {
       languages: Object.fromEntries(
-        locales.map((locale) => [locale, getUrl(pathname, locale)])
+        routing.locales.map((locale) => [locale, getUrl(pathname, locale)])
       )
     }
   }));

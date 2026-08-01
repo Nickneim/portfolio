@@ -1,4 +1,4 @@
-import { unstable_setRequestLocale } from 'next-intl/server';
+import { setRequestLocale } from 'next-intl/server';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/navigation';
 
@@ -7,7 +7,7 @@ export default function Page({
 } : {
   params: {locale: string};
 }) {
-  unstable_setRequestLocale(locale)
+  setRequestLocale(locale)
   const t = useTranslations("HomePage")
 
   return (
