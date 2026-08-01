@@ -31,7 +31,7 @@ export default async function Page({
 
   const t = await getTranslations("Projects")
 
-  const projects = ["games", "discord-bots", "thesis", "spamaps"]
+  const projects = ["raylib-puzzle", "games", "discord-bots", "thesis", "spamaps"]
   return (
     <section className="max-w-xl">
       <h1 className="font-semibold text-4xl mb-8 tracking-tighter">{t('title')}</h1>

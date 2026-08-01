@@ -8,6 +8,11 @@
         "title": "My Projects",
         "about": "These are some of my projects:",
         "wip": "Work In Progress",
+        "raylib-puzzle": {
+            "title": "Raylib Puzzle Framework",
+            "about": "I'm working on a reusable C++ framework for turn-based puzzle games with modular gameplay systems and an emphasis on code reuse. It's based on Raylib and takes care of usual puzzle game needs such as input management, level selection, level editing, and state management with an undo system.",
+            "image": "/images/raylib-puzzle.png"
+        },
         "games": {
             "title": "PuzzleScript Games",
             "about": "I've created various puzzle games using the <puzzlescript>PuzzleScript</puzzlescript> game engine. I've participated in game jams, I've been featured in <bontegames>bontegames</bontegames>, and I've been a part of <theodoor>collaborative projects</theodoor>. All my published games are in my <itchio>Itch.io website</itchio> and they're focused on the Puzzle genre.",
