@@ -2,7 +2,6 @@ import ContactForm from '@/app/components/ContactForm';
 import { basePath } from '@/app/sitemap';
 import { GITHUB_PAGE, ITCHIO_PAGE, LINKEDIN_PAGE } from '@/config';
 import { routing } from '@/i18n/routing';
-import { useTranslations } from 'next-intl';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { FaGithub, FaItchIo, FaLinkedin } from 'react-icons/fa6';
 
@@ -29,23 +28,30 @@ const links = [
 ]
 
  
-export async function generateMetadata({params: {locale}}) {
+export async function generateMetadata({
+  params
+}: {
+  params: Promise<{locale: string}>;
+}) {
+  const {locale} = await params;
+
   const t = await getTranslations({locale, namespace: 'Metadata'});
- 
+
   return {
     title: t('contact')
   };
 }
 
-
-export default function Page({
-  params: {locale}
-} : {
-  params: {locale: string};
+export default async function Page({
+  params
+}: {
+  params: Promise<{locale: string}>;
 }) {
-  setRequestLocale(locale)
+  const {locale} = await params;
 
-  const t = useTranslations("Contact")
+  setRequestLocale(locale);
+
+  const t = await getTranslations("Contact")
 
   const otherLocale = locale === 'en' ? 'es' : 'en';
 

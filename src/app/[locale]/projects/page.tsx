@@ -1,28 +1,35 @@
 import { Project } from '@/app/components/Project';
 import { routing } from '@/i18n/routing';
-import { useTranslations } from 'next-intl';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 
 export async function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }))
 }
 
-export async function generateMetadata({params: {locale}}) {
-  const t = await getTranslations({locale, namespace: 'Metadata'});
  
+export async function generateMetadata({
+  params
+}: {
+  params: Promise<{locale: string}>;
+}) {
+  const {locale} = await params;
+
+  const t = await getTranslations({locale, namespace: 'Metadata'});
+
   return {
-    title: t('projects')
+    title: t('contact')
   };
 }
 
-export default function Page({
-  params: {locale}
-} : {
-  params: {locale: string};
+export default async function Page({
+  params
+}: {
+  params: Promise<{locale: string}>;
 }) {
+  const {locale} = await params;
   setRequestLocale(locale)
 
-  const t = useTranslations("Projects")
+  const t = await getTranslations("Projects")
 
   const projects = ["games", "discord-bots", "thesis", "spamaps"]
   return (

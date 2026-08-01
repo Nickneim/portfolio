@@ -1,7 +1,7 @@
 'use client'
 
 import { AbstractIntlMessages, NextIntlClientProvider } from "next-intl";
-import { ThemeProvider } from "next-themes";
+import { ThemeProvider } from "@teispace/next-themes";
 import React from "react";
 
 export function Providers({

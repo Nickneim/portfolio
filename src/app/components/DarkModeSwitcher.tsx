@@ -1,6 +1,6 @@
 "use client";
 import { useTranslations } from "next-intl";
-import { useTheme } from "next-themes"
+import { useTheme } from "@teispace/next-themes"
 import { useEffect, useState } from "react"
 import { AiFillSun } from "react-icons/ai";
 import { FaLightbulb, FaMoon, FaSun } from "react-icons/fa6";

@@ -10,12 +10,13 @@ import React from 'react'
 import { getMessages, setRequestLocale, getTranslations } from 'next-intl/server'
 import { routing } from '@/i18n/routing';
 
- 
 export async function generateMetadata({
-  params: {locale}
+  params
 }: {
-  params: {locale: string};
-}): Promise<Metadata> {
+  params: Promise<{locale: string}>;
+}) {
+  const {locale} = await params;
+  
   const t = await getTranslations({locale, namespace: 'Metadata'});
  
   return {
@@ -57,11 +58,12 @@ const cx = (...classes : string[]) => classes.filter(Boolean).join(' ')
 
 export default async function LocaleLayout({
   children,
-  params: {locale}
+  params
 }: {
   children: React.ReactNode;
-  params: {locale: string};
+  params: Promise<{locale: string}>;
 }) {
+  const {locale} = await params;
   // required since we're using static export
   setRequestLocale(locale)
 

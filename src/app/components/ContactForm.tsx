@@ -2,13 +2,12 @@
 
 import { useTranslations } from "next-intl";
 import { sendContactInformation, State } from "@/app/lib/actions";
-import { useFormState, useFormStatus } from "react-dom";
+import { useActionState } from "react";
 import clsx from "clsx";
 
 
-function Submit({ messageSent } : { messageSent: boolean}) {
-  const t = useTranslations("ContactForm")
-  const {pending} = useFormStatus();
+function Submit({ messageSent, isPending } : { messageSent: boolean, isPending: boolean}) {
+  const t = useTranslations("ContactForm");
   return (
     <button
       className={
@@ -19,7 +18,7 @@ function Submit({ messageSent } : { messageSent: boolean}) {
         })
       }
       type="submit"
-      disabled={messageSent || pending}
+      disabled={messageSent || isPending}
     >
         {messageSent? t("sent") : t("send")}
     </button>
@@ -29,7 +28,7 @@ function Submit({ messageSent } : { messageSent: boolean}) {
 
 export default function ContactForm() {
   const initialState: State = { message: null, errors: {}, success: false };
-  const [state, formAction] = useFormState(sendContactInformation, initialState)
+  const [state, formAction, isPending] = useActionState(sendContactInformation, initialState)
   const t = useTranslations("ContactForm")
   
   const messageSent = state.success === true
@@ -97,7 +96,7 @@ export default function ContactForm() {
         placeholder={t("message-placeholder")}
         defaultValue=""
         aria-describedby="message-error"
-        disabled={messageSent}
+        disabled={messageSent || isPending}
       />
       <div id="message-error" aria-live="polite" aria-atomic="true">
         {state.errors?.message &&
@@ -107,7 +106,7 @@ export default function ContactForm() {
             </p>
           ))}
       </div>
-      <Submit messageSent={messageSent} />
+      <Submit messageSent={messageSent} isPending={isPending} />
       <div id="emailjs-error" aria-live="polite" aria-atomic="true">
         {state.errors?.emailjs &&
           <p className="mt-1 text-sm text-red-500" key={state.errors.emailjs}>

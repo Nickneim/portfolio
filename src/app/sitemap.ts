@@ -1,7 +1,8 @@
 import {routing} from '@/i18n/routing';
 import {MetadataRoute} from 'next';
 
-// Adapt this as necessary
+export const dynamic = 'force-static';
+
 const pathnames = ['/', '/projects', '/contact'];
 export const basePath = process.env.NODE_ENV === 'development' ? '' : '/portfolio';
 export const baseUrl = `https://nickneim.github.io${basePath}`;

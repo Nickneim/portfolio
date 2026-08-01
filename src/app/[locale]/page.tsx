@@ -1,14 +1,14 @@
-import { setRequestLocale } from 'next-intl/server';
-import { useTranslations } from 'next-intl';
+import { setRequestLocale, getTranslations } from 'next-intl/server';
 import { Link } from '@/navigation';
 
-export default function Page({
-  params: {locale}
-} : {
-  params: {locale: string};
+export default async function Page({
+  params
+}: {
+  params: Promise<{locale: string}>;
 }) {
+  const {locale} = await params;
   setRequestLocale(locale)
-  const t = useTranslations("HomePage")
+  const t = await getTranslations("HomePage")
 
   return (
     <section className="max-w-xl">
