@@ -4,11 +4,13 @@ import { FaCopy } from 'react-icons/fa6'
 
 const CopyButton = ({text, tooltip } : {text: string, tooltip: string }) => {
   const [copied, setCopied] = useState(false);
-  const intervalRef = useRef<NodeJS.Timeout>();
+  const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
   function handleCopyToClipboard() {
     navigator.clipboard.writeText(text);
-    clearTimeout(intervalRef.current);
+    if (intervalRef.current) {
+      clearTimeout(intervalRef.current);
+    }
     setCopied(true);
     intervalRef.current = setTimeout(() => {
       setCopied(false);
